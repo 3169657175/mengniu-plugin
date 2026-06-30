@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         爱零工审单数据助手蒙牛
 // @namespace    http://tampermonkey.net/
-// @version      3.6.8
+// @version      3.6.9
 // @description  统计每日及每小时审核订单量，支持日期切换。v3.6：新增区分“初审”与“复审”单功能。内置一键通过审核助手（Alt+A）。
 // @author       Antigravity
 // @match        *://admin2.slicejobs.com/*
@@ -3937,10 +3937,21 @@
         window.addEventListener('resize', resizeHandler);
     };
 
+    let hasShownUpdateToast = false;
+
     const startHelper = () => {
         init();
         startBackgroundRefresh();
         setInterval(init, 2000);
+
+        if (!hasShownUpdateToast) {
+            hasShownUpdateToast = true;
+            setTimeout(() => {
+                if (typeof autoReviewToast === 'function') {
+                    autoReviewToast('🎉 自动更新测试成功！当前版本 v3.6.9');
+                }
+            }, 3000);
+        }
 
         // 监听DOM变化，使图片编辑快捷按钮秒开秒关以及复制Q5照片证据到Q6
         const observer = new MutationObserver(() => {
