@@ -33,8 +33,10 @@
 
 ## ⚙️ 安装与更新
 
-1.  在浏览器安装 **Tampermonkey (油猴)** 插件。
-2.  新建脚本，将 [slicejobs_stats_helper.user.js](slicejobs_stats_helper.user.js) 完整代码复制进去保存即可。
+1.  在浏览器安装 **Tampermonkey (油猴)** 扩展。
+2.  点击下方链接直接安装或自动更新至最新版本：
+    *   👉 [点击直链安装《爱零工审单数据助手蒙牛》](https://raw.githubusercontent.com/3169657175/mengniu-plugin/master/slicejobs_stats_helper.user.js)
+    *(点击后油猴会自动拦截并弹出安装确认页面，点击“安装”或“更新”即可)*
 3.  匹配域名：`*://admin2.slicejobs.com/*`
 
 ---
